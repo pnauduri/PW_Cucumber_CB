@@ -15,8 +15,15 @@ export default class SearchPage {
 
   
     async populateSkillSearch(searchTerm: string) {
-        await this.page.getByLabel(this.Elements.skillButton_label).click();
-        this.page.locator(this.Elements.skillButton_loc).fill(searchTerm);
-        console.log("populating skill search box");
+       /* await this.page.getByLabel(this.Elements.skillButton_label).click();
+        this.page.locator(this.Elements.skillButton_loc).fill(searchTerm);*/
+     
+
+
+         await this.page.locator("//*[@id='accordion-button-:Riqksrlajl5t6:']").click();
+        
+            await this.page.locator("//*[@id=':R1bliqksrlajl5t6:']").fill(searchTerm);
+            await this.page.locator("//*[@id=':R1bliqksrlajl5t6:']").press('Enter');
+            console.log("populating skill search box");
     }
 }
